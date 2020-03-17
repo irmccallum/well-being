@@ -4,11 +4,11 @@ Steps to produce publication:
 
 Download WSF - https://urban-tep.eu/#!
 (contact DLR for actual data)
-Download VIIRS - https://eogdata.mines.edu/download_dnb_composites.html
+//Download VIIRS - https://eogdata.mines.edu/download_dnb_composites.html
 Download Natural Earth Countries - https://www.naturalearthdata.com/
 Download Indicators - 	https://data.worldbank.org/indicator
 			https://landportal.org/book/indicator/fao-21015-6121
-# Download DHS - https://dhsprogram.com/data/
+Download DHS - https://dhsprogram.com/data/
 
 Run the following scripts in order:
 
