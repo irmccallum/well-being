@@ -3,12 +3,10 @@
 
 ## Steps to produce publication:
 
-1. Download WSF - https://urban-tep.eu/#!
-- (contact DLR for actual data)
+1. Download WSF - https://urban-tep.eu/#! (contact DLR for actual data)
 2. Download VIIRS - https://eogdata.mines.edu/download_dnb_composites.html
 3. Download Natural Earth Countries - https://www.naturalearthdata.com/
-4. Download Indicators - 	https://data.worldbank.org/indicator
-- 			https://landportal.org/book/indicator/fao-21015-6121
+4. Download Indicators -	https://data.worldbank.org/indicator	https://landportal.org/book/indicator/fao-21015-6121
 5. Download DHS - https://dhsprogram.com/data/
 
 
@@ -28,8 +26,7 @@ continent_stats.R – produces table of continent stats on unlit footprints
 
 figure1_globe.R - plots global %unlit per country on a global map.
 
-Figure2_stats.R – creates scatterplots of unlit vs world and FAO indicators,…
--	Exports csv file of merged datasets for validation
+Figure2_stats.R – creates scatterplots of unlit vs world and FAO indicators, exports csv file of merged datasets for validation
 
 Figure2_validation.R - 
 
@@ -41,7 +38,7 @@ import_dhs.R – import DHS data coming from harmonization
 
 explore_dhs.R – reformat and visualize data
 
-figure4_dhs.R – country level DHS boxplots
--	Also exports dataset for validation statistics
-Figure4_eda_rev - 
+figure4_dhs.R – country level DHS boxplots, also exports dataset for validation statistics
+
+Figure4_eda_rev
 
