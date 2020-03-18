@@ -1,16 +1,18 @@
 # Poverty Mapping
 
-Steps to produce publication:
 
-Download WSF - https://urban-tep.eu/#!
-(contact DLR for actual data)
-Download VIIRS - https://eogdata.mines.edu/download_dnb_composites.html
-Download Natural Earth Countries - https://www.naturalearthdata.com/
-Download Indicators - 	https://data.worldbank.org/indicator
-			https://landportal.org/book/indicator/fao-21015-6121
-Download DHS - https://dhsprogram.com/data/
+## Steps to produce publication:
 
-Run the following scripts in order:
+1. Download WSF - https://urban-tep.eu/#!
+- (contact DLR for actual data)
+2. Download VIIRS - https://eogdata.mines.edu/download_dnb_composites.html
+3. Download Natural Earth Countries - https://www.naturalearthdata.com/
+4. Download Indicators - 	https://data.worldbank.org/indicator
+- 			https://landportal.org/book/indicator/fao-21015-6121
+5. Download DHS - https://dhsprogram.com/data/
+
+
+## Run the following scripts in order:
 
 viirs_import.R – this produces VIIRS vrt by compressing file size, setting lit pixels to nodata, and unlit pixels to 1, producing global vrt.
 
