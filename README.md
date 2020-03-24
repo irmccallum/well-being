@@ -1,6 +1,5 @@
 # Poverty Mapping
 
-
 ## Steps to produce publication:
 
 1. Download WSF - https://urban-tep.eu/#! (contact DLR for actual data)
@@ -11,6 +10,8 @@
 
 
 ## Run the following scripts in order:
+
+Place the following scripts into a single folder, and create subdirectories titled viirs, wsf, countries, graticules and stats. Then run the following scripts:
 
 viirs_import.R – this produces VIIRS vrt by compressing file size, setting lit pixels to nodata, and unlit pixels to 1
 
