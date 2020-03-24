@@ -25,13 +25,13 @@ Place the following scripts into a single folder, and create subdirectories titl
 
 `figure1_globe.R` - plots global %unlit per country on a global map and bar graph
 
-`Figure2_stats.R` – creates scatterplots of unlit vs world and FAO indicators, exports merged datasets for validation
+`figure2_stats.R` – creates scatterplots of unlit vs world and FAO indicators, exports merged datasets for validation
 
-Figure2_validation.R - 
+`figure2_stats_confidence.R` - computes an estimate, test statitic, significance test, and confidence interval 
 
-Figure3_country.R – plot lit/unlit building footprints for 4 select countries
+Figure3_country.R – plot maps of lit/unlit building footprints for 4 select countries
 
-DHS preprocessing – see scripts from Matt Cooper
+DHS preprocessing – see scripts from Matt Cooper: https://github.com/mcooper/DHSwealth
 
 import_dhs.R – import DHS data coming from harmonization
 
