@@ -7,7 +7,7 @@
 2. Download VIIRS - https://eogdata.mines.edu/download_dnb_composites.html
 3. Download Countries - https://www.naturalearthdata.com/downloads/50m-cultural-vectors/ (50m scale, countries level 0) and Graticules - https://www.naturalearthdata.com/downloads/110m-physical-vectors/
 4. Download Indicators -	https://data.worldbank.org/indicator	https://landportal.org/book/indicator/fao-21015-6121
-5. Download DHS - https://dhsprogram.com/data/
+5. Download DHS - https://dhsprogram.com/data/ and process/harmonize: https://github.com/mcooper/DHSwealth
 
 
 ## Run the following scripts in order:
@@ -22,9 +22,9 @@ extract_zonal.R - creates country level darkness statistics – exports csv file
 
 continent_stats.R – produces table of continent stats on unlit footprints
 
-figure1_globe.R - plots global %unlit per country on a global map.
+figure1_globe.R - plots global %unlit per country on a global map and bar graph
 
-Figure2_stats.R – creates scatterplots of unlit vs world and FAO indicators, exports csv file of merged datasets for validation
+Figure2_stats.R – creates scatterplots of unlit vs world and FAO indicators, exports merged datasets for validation
 
 Figure2_validation.R - 
 
