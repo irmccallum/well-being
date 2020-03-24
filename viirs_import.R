@@ -1,7 +1,7 @@
 # ----------------------------------
 # viirs_import - reduce size, build vrt
 # creates a 500m raster of unlit pixels
-# IIASA Sep,2018
+# IIASA 24/03/2020
 # ----------------------------------
 
 library(gdalUtils)
