@@ -15,17 +15,17 @@ Place the following scripts into a single folder, and create subdirectories titl
 
 `viirs_import.R` – this produces VIIRS vrt by compressing file size, setting lit pixels to nodata, and unlit pixels to 1
 
-wsf_import.R - produces a WSF vrt, set to same resolution as VIIRS, based on averaging the original high-res wsf pixels
+`wsf_import.R` - produces a WSF vrt, set to same resolution as VIIRS, based on averaging the original high-res wsf pixels
 
-cntry_rasterize.R – rasterize country polygon needed for zonal statistics
+`cntry_rasterize.R` – rasterize country polygon needed for zonal statistics
 
-extract_zonal.R - creates country level darkness statistics – exports csv file
+`extract_zonal.R` - creates country level darkness statistics – exports csv file
 
-continent_stats.R – produces table of continent stats on unlit footprints
+`continent_stats.R` – produces table of continent stats on unlit footprints
 
-figure1_globe.R - plots global %unlit per country on a global map and bar graph
+`figure1_globe.R` - plots global %unlit per country on a global map and bar graph
 
-Figure2_stats.R – creates scatterplots of unlit vs world and FAO indicators, exports merged datasets for validation
+`Figure2_stats.R` – creates scatterplots of unlit vs world and FAO indicators, exports merged datasets for validation
 
 Figure2_validation.R - 
 
