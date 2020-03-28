@@ -11,7 +11,7 @@
 
 ## Run the following scripts in order:
 
-Place the following scripts into a single folder, and create subdirectories titled viirs, wsf, countries, graticules and stats. Then run the following scripts:
+Place the following scripts into a single folder, and create subdirectories for the respective datasets downloaded above. Then run the following scripts in the order they appear below:
 
 `viirs_import.R` – this produces VIIRS vrt by compressing file size, setting lit pixels to nodata, and unlit pixels to 1
 
