@@ -29,7 +29,7 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `figure2_stats_confidence.R` - computes an estimate, test statitic, significance test, and confidence interval 
 
-Figure3_country.R – plot maps of lit/unlit building footprints for 4 select countries
+`figure3_maps.R` – plot maps of lit/unlit building footprints for 4 select countries
 
 DHS preprocessing – see scripts from Matt Cooper: https://github.com/mcooper/DHSwealth
 
