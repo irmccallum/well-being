@@ -1,6 +1,6 @@
 # ----------------------------------
-# viirs_import - reduce size, build vrt
-# creates a 500m raster of unlit pixels
+# viirs_import.R
+# creates a 500m vrt of unlit pixels
 # IIASA 24/03/2020
 # ----------------------------------
 
@@ -8,13 +8,13 @@ library(gdalUtils)
 library(rgdal)
 library(raster)
 
-# download VIIRS -------------------
+# download VIIRS
 # see Readme
 
-# get tif files --------------------
+# get tif files
 file_list <- list.files(path = "./viirs", pattern = "*.tif$",full.names = TRUE) 
 
-# Write raster ---------------------
+# write out unlit rasters
 for (i in 1: length(file_list)) {
   r <- raster(file_list[i])
   r <- reclassify(r, c(-Inf, 0, 1, 0, Inf, 0))
@@ -22,5 +22,5 @@ for (i in 1: length(file_list)) {
   writeRaster(r, filename=file.out, overwrite=TRUE, progress="text", datatype="INT1U", options=c("COMPRESS=LZW"), NAflag=0)
 }
 
-# write vrt -----------------------
+# write out unlit vrt
 gdalbuildvrt(gdalfile=paste0("./viirs/unlit/*.tif"), output.vrt = paste0("./viirs/unlit/VIIRSunlit.vrt"), overwrite=TRUE, verbose = TRUE, te = c(-180, -90, 180, 90), tr = c(0.004166667, 0.004166667))
