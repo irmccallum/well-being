@@ -31,13 +31,11 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `figure3_maps.R` – plot maps of lit/unlit building footprints for 4 select countries
 
-DHS preprocessing – see scripts from Matt Cooper: https://github.com/mcooper/DHSwealth
+``import_dhs.R`` – import DHS data coming from harmonization: https://github.com/mcooper/DHSwealth
 
-import_dhs.R – import DHS data coming from harmonization
+``explore_dhs.R`` – reformat and visualize data
 
-explore_dhs.R – reformat and visualize data
+``figure4_dhs.R`` – country level DHS boxplots, also exports dataset for validation statistics
 
-figure4_dhs.R – country level DHS boxplots, also exports dataset for validation statistics
-
-Figure4_eda_rev
+``figure4_eda_rev`` - 
 
