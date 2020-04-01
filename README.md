@@ -13,9 +13,11 @@
 
 Place the following scripts into a single folder, and create subdirectories for the respective datasets downloaded above. Then run the following scripts in the order they appear below:
 
-`viirs_import.R` – this produces VIIRS vrt by compressing file size, setting lit pixels to nodata, and unlit pixels to 1
+`viirs_import.R` – this produces VIIRS vrt and tif by compressing file size, setting lit pixels to nodata, and unlit pixels to 1
 
-`wsf_import.R` - produces a WSF vrt, set to same resolution as VIIRS, based on averaging the original high-res wsf pixels
+`wsf_import.R` - produces a WSF vrt and tif, set to same resolution as VIIRS, based on averaging the original high-res wsf pixels (the creation of the new global tif currently is slow - working to improve speed)
+
+`unlit_rasters.R` - produces area weighted lit and unlit wsf tifs for raster analysis (required for figure4_dhs.R)
 
 `cntry_rasterize.R` – rasterize country polygon needed for zonal statistics
 
