@@ -17,8 +17,6 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `wsf_import.R` - produces a WSF vrt and tif, set to same resolution as VIIRS, based on averaging the original high-res wsf pixels (the creation of the new global tif currently is slow - working to improve speed)
 
-`unlit_rasters.R` - produces area weighted lit and unlit wsf tifs for raster analysis (required for figure4_dhs.R)
-
 `cntry_rasterize.R` – rasterize country polygon needed for zonal statistics
 
 `extract_zonal.R` - creates country level darkness statistics – exports csv file
@@ -39,5 +37,5 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 ``figure4_dhs.R`` – country level DHS boxplots, also exports dataset for validation statistics
 
-``figure4_eda_rev`` - 
+``figure4_val`` - country level validation of DHS and unlit settlements
 
