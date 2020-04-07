@@ -1,6 +1,6 @@
 # Poverty Mapping
 
-## Steps to produce publication:
+## Data
 
 1. Download WSF - https://urban-tep.eu/#! (contact DLR for actual data)
 2. Download VIIRS - https://eogdata.mines.edu/download_dnb_composites.html
