@@ -39,5 +39,5 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `figure4_dhs.R` – country level DHS boxplots, also exports dataset for validation statistics
 
-`figure4_val.R` - country level validation of DHS and unlit settlements
+`figure4_val.Rmd` - country level validation of DHS and unlit settlements
 
