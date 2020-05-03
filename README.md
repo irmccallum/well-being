@@ -1,12 +1,12 @@
 # Poverty Mapping
 
-## Data
+## Download Data
 
-1. Download WSF - https://urban-tep.eu/#! (contact DLR for actual data)
-2. Download VIIRS - https://eogdata.mines.edu/download_dnb_composites.html
-3. Download Sovereign States - https://www.naturalearthdata.com/downloads/50m-cultural-vectors/ (Admin 0 - Details), Graticules - https://www.naturalearthdata.com/downloads/110m-physical-vectors/ and Populated Places (simple) https://www.naturalearthdata.com/downloads/10m-cultural-vectors/
-4. Download Indicators -	https://data.worldbank.org/indicator and	https://landportal.org/book/indicator/fao-21015-6121 (this data no longer available - contact us if required)
-5. Download DHS - https://dhsprogram.com/data/ and process/harmonize: https://github.com/mcooper/DHSwealth
+1. WSF: https://urban-tep.eu/#! (contact DLR for actual data)
+2. VIIRS: https://eogdata.mines.edu/download_dnb_composites.html
+3. Naural Earth data: Sovereign states - https://www.naturalearthdata.com/downloads/50m-cultural-vectors/ (Admin 0 - Details), Graticules - https://www.naturalearthdata.com/downloads/110m-physical-vectors/ and Populated Places (simple) https://www.naturalearthdata.com/downloads/10m-cultural-vectors/
+4. Indicators:	https://data.worldbank.org/indicator and	https://landportal.org/book/indicator/fao-21015-6121 (this data no longer available - contact us if required)
+5. DHS: https://dhsprogram.com/data/ and process/harmonize: https://github.com/mcooper/DHSwealth
 
 
 ## Run the following scripts in order:
@@ -17,7 +17,7 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `wsf_import.R` - produces a WSF vrt and tif, set to same resolution as VIIRS, based on averaging the original high-res wsf pixels (the creation of the new global tif currently is slow - working to improve speed)
 
-`cntry_rasterize.R` – rasterize country polygon needed for zonal statistics
+`cntry_rasterize.R` – rasterize sovereign state polygons needed for zonal statistics
 
 `extract_zonal.R` - creates country level darkness statistics – exports csv file
 
