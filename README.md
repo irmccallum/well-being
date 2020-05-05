@@ -19,7 +19,7 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `cntry_rasterize.R` – rasterize sovereign state polygons needed for zonal statistics
 
-`extract_zonal.R` - creates country level darkness statistics – exports csv file
+`extract_zonal.R` - creates country level darkness statistics – exports csv file (this script runs slowly)
 
 `continent_stats.R` – produces table of continent stats on unlit footprints
 
