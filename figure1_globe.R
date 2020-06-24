@@ -1,7 +1,7 @@
 # ----------------------------------
 # figure1_globe.R
 # map %unlit by country and barplot
-# IIASA 24/03/2020
+# IIASA 24/06/2020
 # ----------------------------------
 
 # create map of country percent unlit
@@ -17,6 +17,7 @@ library(ggmap)
 unlit <- read.csv("globalunlitwsf.csv")
 unlit <- rename(unlit, replace = c("Country" = "id"))
 unlit <- na.omit(unlit)
+unlit[unlit == 0] <- 0.1 # then ensures that polygon is shaded
 
 # load countries, bbox
 natearth <- shapefile('./countries/ne_50m_admin_0_countries.shp')
@@ -26,9 +27,13 @@ natearth$country <- natearth$ADMIN
 bbox <- shapefile("./graticules/ne_110m_wgs84_bounding_box.shp") 
 grat <- shapefile("./graticules/ne_110m_graticules_30.shp")
 
+# add outline of all polygons to map
+blank <- shapefile('./countries/ne_50m_admin_0_countries.shp')
+
 # project map
 newproj <- "+proj=robin"
 natearthp <- spTransform(natearth, CRS(newproj))
+blankp <- spTransform(blank, CRS(newproj)) %>% fortify()
 bbox_robin <- spTransform(bbox, CRS(newproj)) %>% fortify()
 grat_robin <- spTransform(grat, CRS(newproj)) %>% fortify()
 
@@ -44,9 +49,10 @@ r2_join <- r2_join[complete.cases(r2_join), ]
 
 # plot map
 p1 <- ggplot()+ 
+  geom_polygon(data=blankp, aes(x=long, y=lat,group = group),fill = "transparent", color="grey50", size = 0.21) +
   geom_polygon(data=bbox_robin, aes(x=long, y=lat), colour="grey50", fill="transparent", size = 0.21) +
   geom_polygon(data=r2_join, aes(x=long, y=lat,group=group,fill=Unlit_WSFpc), colour="grey50", size = 0.21) +
-  scale_fill_viridis_c(limits=c(0,100),breaks=c(0,25,50,75,100),direction = -1,option = "magma")+
+  scale_fill_viridis_c(limits=c(0,100),breaks=c(0,25,50,75,100), direction = -1,option = "inferno") +
   geom_path(data=grat_robin, aes(long,lat,group=group),linetype="dashed", color="grey50", size = 0.21) +
   theme_void()+
   theme(text = element_text(size=10))+
@@ -73,7 +79,7 @@ p2<-ggplot(data=final, aes(x=reorder(id,Unlit_WSFpc), y=Unlit_WSFpc,fill=Unlit_W
   theme(text = element_text(size=10))+
   labs(y="Unlit settlements (%)",x="")+
   scale_y_continuous(limits=c(0,75),breaks = c(0,25,50,75))+
-  scale_fill_viridis_c(direction = -1,option = "magma",guide = "none", limits=c(0,100))
+  scale_fill_viridis_c(direction = -1,option = "inferno",guide = "none", limits=c(0,100))
 
 # save plot
 g <- ggarrange(p1,p2,ncol=2,labels = c("a","b"),widths = c(2,1))
