@@ -1,7 +1,7 @@
 # ----------------------------------
 # figure2_stats.R
 # plot global indicators
-# IIASA 23/03/2020
+# IIASA 23/06/2020
 # ----------------------------------
 
 library(ggplot2)
@@ -10,6 +10,9 @@ library(ggrepel)
 library(ggpubr)
 library(raster)
 library(ggthemes)
+library(viridis)
+library(scales)
+library(ggsci)
 
 # logit function for axis
 logit <- function(x){log(x/(1-x))}
@@ -59,7 +62,7 @@ pop.df$Continent <- as.factor(pop.df$Continent)
 
 # create a custom color scale
 library(RColorBrewer)
-myColors <- brewer.pal(7,"Set1")
+myColors <- pal_lancet("lanonc")(6)
 names(myColors) <- levels(pop.df$Continent)
 colScale <- scale_colour_manual(name = "Continent",values = myColors)
 
@@ -68,6 +71,7 @@ ec <- merge(unlit,ec,by="Country",sort=FALSE)
 ec <- merge(ec,pop.df,by="Country",sort=FALSE) %>%
   na.omit()
 ec <- ec[ec$Unlit_WSFpc > 0.5,]
+ec <- ec[ec$Continent != "Oceania",]
 
 r <- merge(unlit,r,by="Country",sort=FALSE)
 r <- merge(r,pop.df,by="Country",sort=FALSE)
@@ -95,17 +99,16 @@ write.csv(alldata,file="alldata.csv")
 gdp$logitWSFpc <- log(gdp$Unlit_WSFpc/100/(1-gdp$Unlit_WSFpc/100)); gdp$logitWSFpc[gdp$Unlit_WSFpc==0] <- log(0.01/.99)
 gdp <- na.omit(gdp)
 
-gp <- ggplot(gdp, aes(x=log10(gdp), y=logitWSFpc,label=Country)) +
-  geom_smooth(aes(log10(gdp),logitWSFpc,colour=Continent,alpha=0.4), method=lm, se=FALSE) +
+gp <- ggplot(gdp, aes(x=gdp, y=logitWSFpc,label=Country)) +
+  geom_smooth(aes(gdp,logitWSFpc,colour=Continent,alpha=0.4), method=lm, se=FALSE) +
   geom_point(aes(color=Continent,alpha=0.4,size=population)) + 
   colScale+
   guides(alpha=FALSE)+
-    # add some text annotations for the very large countries
-  geom_text_repel(color = "gray50", cex=3.5,
+  geom_text_repel(color = "black", cex=3, min.segment.length = 0,
                   data = dplyr::filter(gdp, population > 200000000 | Country %in% "Nigeria" )) +
   
   labs(size = "Population (m)",
-       x="GDP (per capita)",
+       x="GDP (int$ per capita)",
        y="Unlit settlements (%)",
        color="Continent") +
   theme(legend.position = 'none')+
@@ -114,11 +117,9 @@ gp <- ggplot(gdp, aes(x=log10(gdp), y=logitWSFpc,label=Country)) +
              breaks = 1000000 * c(250, 500, 750, 1000, 1250),
              labels = c("250", "500", "750", "1000", "1250"), 
              guide = "none") +
-
-  scale_x_continuous(breaks=c(0,3,4,5),labels=c("0","1000","10000","100000")) +
   guides(size=guide_legend(override.aes=list(colour="grey"))) +
   scale_y_continuous(breaks=logit(c(.005,.01,.05,.5,.75)),labels=c(0.5,1,5,50,75),limits = c(logit(.005),logit(.75)))+
-  
+   scale_x_log10(labels = comma) +
   theme_classic(base_family = "Avenir")+
   theme(legend.position = "none",
         axis.line = element_line(color = "grey85"),
@@ -129,14 +130,14 @@ gp <- ggplot(gdp, aes(x=log10(gdp), y=logitWSFpc,label=Country)) +
 # logit transform for probs, log transform for GDP
 ec$logitWSFpc <- log(ec$Unlit_WSFpc/100/(1-ec$Unlit_WSFpc/100)); ec$logitWSFpc[ec$Unlit_WSFpc==0] <- log(0.01/.99)
 
-ecp <- ggplot(ec, aes(x=log10(ec), y=logitWSFpc,label=Country,size=population)) +
-  geom_smooth(aes(log10(ec),logitWSFpc,colour=Continent), method=lm, se=FALSE) +
+ecp <- ggplot(ec, aes(x=ec, y=logitWSFpc,label=Country,size=population)) +
+  geom_smooth(aes(ec,logitWSFpc,colour=Continent), method=lm, se=FALSE) +
   geom_point(aes(color=Continent,alpha=0.5)) + 
   colScale+
   guides(alpha=FALSE)+
-  # add some text annotations for the very large countries
-  geom_text_repel(color = "gray50", cex=3.5,
+  geom_text_repel(color = "black", cex=3, min.segment.length = 0,
                   data = dplyr::filter(ec, population > 200000000 | Country %in% "Nigeria" )) +
+  
     labs(size = "Population (M)",
        x="Electricity consumption (kWh per capita)",
        y="",
@@ -148,9 +149,8 @@ ecp <- ggplot(ec, aes(x=log10(ec), y=logitWSFpc,label=Country,size=population)) 
              guide = "none") +
   guides(size=guide_legend(override.aes=list(colour="grey"))) +
   theme_classic(base_family = "Avenir")+
-  scale_x_continuous(breaks=c(0,2,3,4),labels=c("0","100","1000","10000")) +
-  
-  scale_y_continuous(breaks=logit(c(.005,.01,.05,.5,.75)),labels=c(0.5,1,5,50,75),limits = c(logit(.005),logit(.75)))+
+  scale_x_log10(labels = comma)+
+   scale_y_continuous(breaks=logit(c(.005,.01,.05,.5,.75)),labels=c(0.5,1,5,50,75),limits = c(logit(.005),logit(.75)))+
   theme(legend.position = "none",
         axis.line = element_line(color = "grey85"),
         axis.ticks = element_line(color = "grey85"))
@@ -162,13 +162,12 @@ r$logitWSFpc <- log(r$Unlit_WSFpc/100/(1-r$Unlit_WSFpc/100)); r$logitWSFpc[r$Unl
 r$logitr <- log(r$r/100/(1-r$r/100)); r$logitr[r$r==0] <- log(0.01/.99)
 r$logitr[r$r==100] <- log(0.99/.01)
 
-rp <- ggplot(r, aes(x=logitr, y=logitWSFpc,label=Country,size=population)) +
-  geom_smooth(aes(logitr,logitWSFpc,colour=Continent), method=lm, se=FALSE) +
+rp <- ggplot(r, aes(x=r, y=logitWSFpc,label=Country,size=population)) +
+  geom_smooth(aes(r,logitWSFpc,colour=Continent), method=lm, se=FALSE) +
   geom_point(aes(color=Continent,alpha=0.5)) + 
   colScale+
   guides(alpha=FALSE)+
-  # add some text annotations for the very large countries
-  geom_text_repel(color = "gray50", cex=3.5,
+  geom_text_repel(color = "black", cex=3, min.segment.length = 0,
                   data = dplyr::filter(r, population > 200000000 | Country %in% "Nigeria" )) +
   
   labs(size = "Population (mil)",
@@ -182,8 +181,7 @@ rp <- ggplot(r, aes(x=logitr, y=logitWSFpc,label=Country,size=population)) +
              guide = "none") +
   guides(size=guide_legend(override.aes=list(colour="grey"))) +
   scale_y_continuous(breaks=logit(c(.005,.01,.05,.5,.75)),labels=c(0.5,1,5,50,75),limits = c(logit(.005),logit(.75)))+
-  scale_x_continuous(breaks=c(-3,0,2.25),labels=round(expit(c(-3,0,2.25))))+
-  
+  scale_x_log10()+
   theme_classic()+
   theme(legend.position = "none",
         axis.line = element_line(color = "grey85"),
@@ -196,12 +194,12 @@ urb$logitWSFpc <- log(urb$Unlit_WSFpc/100/(1-urb$Unlit_WSFpc/100)); urb$logitWSF
 urb$logitu <- log(urb$urban/100/(1-urb$urban/100)); urb$logitu[urb$urban==0] <- log(0.01/.99)
 urb$logitu[urb$urban==100] <- log(0.99/.01)
 
-u <- ggplot(urb, aes(x=logitu, y=logitWSFpc,label=Country,size=population)) +
-  geom_smooth(aes(logitu,logitWSFpc,colour=Continent), method=lm, se=FALSE) +
+u <- ggplot(urb, aes(x=urban, y=logitWSFpc,label=Country,size=population)) +
+  geom_smooth(aes(urban,logitWSFpc,colour=Continent), method=lm, se=FALSE) +
   geom_point(aes(color=Continent,alpha=0.5)) + 
   colScale+
   guides(alpha=FALSE)+
-  geom_text_repel(color = "gray50", cex=3.5,
+  geom_text_repel(color = "black", cex=3, min.segment.length = 0,
                   data = dplyr::filter(urb, population > 200000000 | Country %in% "Nigeria" )) +
   
   labs(size = "Population (mil)",
@@ -215,7 +213,8 @@ u <- ggplot(urb, aes(x=logitu, y=logitWSFpc,label=Country,size=population)) +
              guide = "none") +
   guides(size=guide_legend()) +
   scale_y_continuous(breaks=logit(c(.005,.01,.05,.5,.75)),labels=c(0.5,1,5,50,75),limits = c(logit(.005),logit(.75)))+
-  scale_x_continuous(breaks=c(-1.7,0,2.25),labels=round(expit(c(-1.7,0,2.25)))) +
+  scale_x_log10(labels = comma)+
+  
   theme_classic()+
   theme(legend.position = "none",
         axis.line = element_line(color = "grey85"),
