@@ -37,7 +37,7 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `explore_dhs.R` – reformat and visualize data
 
-`figure4_dhs.R` – country level DHS boxplots, also exports dataset for validation statistics
+`figure4_dhs.R` – country level DHS boxplots, also exports dataset for validation statistics - change continent between Africa, Asia and North America to produce respective graphs and tables which are used as input to 'figure4_val.Rmd'
 
 `figure4_val.Rmd` - country level validation of DHS and unlit settlements
 
