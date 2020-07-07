@@ -2,10 +2,10 @@
 
 ## Download Data
 
-1. WSF: https://urban-tep.eu/#! (contact DLR for actual data)
+1. WSF: https://urban-tep.eu/#! (contact DLR for data)
 2. VIIRS: https://eogdata.mines.edu/download_dnb_composites.html
 3. Naural Earth data: Countries - https://www.naturalearthdata.com/downloads/50m-cultural-vectors/ (Admin 0 - Countries), Graticules - https://www.naturalearthdata.com/downloads/110m-physical-vectors/ and Populated Places (simple) https://www.naturalearthdata.com/downloads/10m-cultural-vectors/
-4. Indicators:	https://data.worldbank.org/indicator and	https://landportal.org/book/indicator/fao-21015-6121 (this data no longer available - contact us if required)
+4. Indicators:	https://data.worldbank.org/indicator
 5. DHS: https://dhsprogram.com/data/ and process/harmonize: https://github.com/mcooper/DHSwealth
 
 
