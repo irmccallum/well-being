@@ -2,7 +2,7 @@
 
 ## Download Data
 
-1. WSF: https://urban-tep.eu/#! (contact DLR for data)
+1. WSF: data found in this publication - https://www.nature.com/articles/s41597-020-00580-5#Sec1
 2. VIIRS: https://eogdata.mines.edu/download_dnb_composites.html
 3. Naural Earth data: Countries - https://www.naturalearthdata.com/downloads/50m-cultural-vectors/ (Admin 0 - Countries), Graticules - https://www.naturalearthdata.com/downloads/110m-physical-vectors/ and Populated Places (simple) https://www.naturalearthdata.com/downloads/10m-cultural-vectors/
 4. Indicators:	https://data.worldbank.org/indicator
