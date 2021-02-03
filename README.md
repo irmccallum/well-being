@@ -13,13 +13,13 @@
 
 Place the following scripts into a single folder, and create subdirectories for the respective datasets downloaded above. Then run the following scripts in the order they appear below:
 
-`viirs_import.R` – this produces VIIRS vrt and tif by compressing file size, setting lit pixels to nodata, and unlit pixels to 1
+`viirs_import.R` – this produces VIIRS vrt and tif by compressing file size, setting lit pixels to nodata, and unlit pixels to value of 1
 
-`wsf_import.R` - produces a WSF vrt and tif, set to same resolution as VIIRS, based on averaging the original high-res wsf pixels (the creation of the new global tif currently is slow - working to improve speed)
+`wsf_import.R` - produces a reprojected tif, set to same resolution as VIIRS, using the WSF 500 percentage layer, setting pixels with < 10% WSF coverage to nodata
 
 `cntry_rasterize.R` – rasterize sovereign state polygons needed for zonal statistics
 
-`extract_zonal.R` - creates country level darkness statistics – exports csv file (this script runs slowly)
+`extract_zonal.R` - creates country level darkness statistics – exports csv file
 
 `continent_stats.R` – produces table of continent stats on unlit footprints
 
