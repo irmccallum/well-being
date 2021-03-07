@@ -27,7 +27,7 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `figure1_globe.R` - plots global %unlit per country on a global map and bar graph
 
-`global_tifs.R` - produce global total WSF and unlit WSF tifs by area for figure 4
+`global_tifs.R` - produce global total WSF and unlit WSF tifs by area for figure2
 
 `import_dhs.R` – import DHS data coming from harmonization: https://github.com/mcooper/DHSwealth
 
