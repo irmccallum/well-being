@@ -27,19 +27,17 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `figure1_globe.R` - plots global %unlit per country on a global map and bar graph
 
-
-
-`figure3_maps.R` – plot maps of lit/unlit building footprints for 4 select countries
-
 `global_tifs.R` - produce global total WSF and unlit WSF tifs by area for figure 4
 
 `import_dhs.R` – import DHS data coming from harmonization: https://github.com/mcooper/DHSwealth
 
 `explore_dhs.R` – reformat and visualize data
 
-`figure4_dhs.R` – country level DHS boxplots, also exports dataset for validation statistics - change continent between Africa, Asia and North America to produce respective graphs and tables which are used as input to 'figure4_val.Rmd'
+`figure2_dhs.R` – country level DHS boxplots, also exports dataset for validation statistics - change continent between Africa, Asia, South and North America to produce respective graphs and tables which are used as input to 'figure2_val.Rmd'
 
-`figure4_val.Rmd` - country level validation of DHS and unlit settlements
+`figure2_val.Rmd` - country level validation of DHS and unlit settlements
+
+`figure3_maps.R` – plot maps of lit/unlit building footprints for 4 select countries
 
 
 ## SI Scripts
