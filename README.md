@@ -15,7 +15,9 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `viirs_import.R` – this produces VIIRS vrt and tif by compressing file size, setting lit pixels to nodata, and unlit pixels to value of 1
 
-`wsf_import.R` - produces a reprojected tif, set to same resolution as VIIRS, using the WSF 500 percentage layer, setting pixels with < 10% WSF coverage to nodata
+`wsf_import.R` - produces a reprojected tif, set to same resolution as VIIRS, using the WSF 500 percentage layer, setting pixels with < 15% WSF coverage to nodata
+
+`global_area.R` - produces a global area raster, set to same resolution as VIIRS, in km2 units
 
 `cntry_rasterize.R` – rasterize sovereign state polygons needed for zonal statistics
 
@@ -25,9 +27,7 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `figure1_globe.R` - plots global %unlit per country on a global map and bar graph
 
-`figure2_stats.R` – creates scatterplots of unlit vs world and FAO indicators, exports merged datasets for validation
 
-`figure2_stats_confidence.R` - computes an estimate, test statitic, significance test, and confidence interval 
 
 `figure3_maps.R` – plot maps of lit/unlit building footprints for 4 select countries
 
@@ -40,4 +40,11 @@ Place the following scripts into a single folder, and create subdirectories for 
 `figure4_dhs.R` – country level DHS boxplots, also exports dataset for validation statistics - change continent between Africa, Asia and North America to produce respective graphs and tables which are used as input to 'figure4_val.Rmd'
 
 `figure4_val.Rmd` - country level validation of DHS and unlit settlements
+
+
+## SI Scripts
+
+`figureXXX_stats_SI.R` – creates scatterplots of unlit vs world and FAO indicators, exports merged datasets for validation
+
+`figureXXX_stats_confidence_SI.R` - computes an estimate, test statitic, significance test, and confidence interval 
 
