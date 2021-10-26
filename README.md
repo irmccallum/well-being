@@ -17,7 +17,7 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `viirs_import.R` – this produces VIIRS vrt and tif by compressing file size, setting lit pixels to nodata, and unlit pixels to value of 1
 
-`wsf_import.R` - produces a reprojected tif, set to same resolution as VIIRS, using the WSF 500 percentage layer, setting pixels with < 15% WSF coverage to nodata
+`wsf_import.R` - produces a reprojected tif, set to same resolution as VIIRS, using the WSF 500 percentage layer, setting pixels with < 15% WSF coverage to nodata (also produces a complete WSF)
 
 `global_area.R` - produces a global area raster, set to same resolution as VIIRS, in km2 units
 
@@ -27,7 +27,7 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `continent_stats.R` – produces table of continent stats on unlit footprints
 
-`figure1_globe.R` - plots global %unlit per country on a global map and bar graph
+`figure1_globe.R` - plots global %unlit per country on a global map and bar graphs (urban and rural)
 
 `global_tifs.R` - produce global total WSF and unlit WSF tifs by area for figure2
 
