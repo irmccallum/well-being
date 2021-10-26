@@ -41,6 +41,8 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `figure3_maps.R` – plot maps of lit/unlit building footprints for 4 select countries
 
+`figure4a/b/c.R` – plots a,b,c, wealth index, SHDI and income
+
 
 ## SI Scripts
 
