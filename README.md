@@ -17,7 +17,7 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `viirs_import.R` – this produces VIIRS vrt and tif by compressing file size, setting lit pixels to nodata, and unlit pixels to value of 1
 
-`wsf_import.R` - produces a reprojected tif, set to same resolution as VIIRS, using the WSF 500 percentage layer, setting pixels with < 15% WSF coverage to nodata (also produces a complete WSF)
+`wsf_import.R` - produces a reprojected tif, set to same resolution as VIIRS, using the WSF 500 m percentage layer
 
 `global_area.R` - produces a global area raster, set to same resolution as VIIRS, in km2 units
 
