@@ -39,14 +39,14 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `figure2_val.Rmd` - country level validation of DHS and unlit settlements
 
-`figure3_maps.R` – plot maps of lit/unlit building footprints for 4 select countries
+`figure3_maps.R` – plot maps of wealth classes for 4 select countries and export all maps as tiff files
 
 `figure4a/b/c.R` – plots a,b,c, wealth index, SHDI and income
 
 
 ## SI Scripts
 
-`figureXXX_stats_SI.R` – creates scatterplots of unlit vs world and FAO indicators, exports merged datasets for validation
+`figureXXX_stats_SI.R` – creates scatterplots of unlit vs World Bank and FAO indicators, exports merged datasets for validation
 
 `figureXXX_stats_confidence_SI.R` - computes an estimate, test statitic, significance test, and confidence interval 
 
