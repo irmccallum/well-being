@@ -1,7 +1,5 @@
 # Poverty Mapping
 
-UPON PUBLICATION OF THIS WORK ALL SCRIPTS WILL BE UPDATED.
-
 ## Download Data
 
 1. WSF: data found in this publication - https://www.nature.com/articles/s41597-020-00580-5
