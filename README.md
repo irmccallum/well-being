@@ -2,11 +2,14 @@
 
 ## Download Data
 
-1. WSF: data found in this publication - https://www.nature.com/articles/s41597-020-00580-5
+1. WSF: https://www.nature.com/articles/s41597-020-00580-5
 2. VIIRS: https://eogdata.mines.edu/download_dnb_composites.html
-3. Naural Earth data: Countries - https://www.naturalearthdata.com/downloads/50m-cultural-vectors/ (Admin 0 - Countries), Graticules - https://www.naturalearthdata.com/downloads/110m-physical-vectors/ and Populated Places (simple) https://www.naturalearthdata.com/downloads/10m-cultural-vectors/
-4. Indicators:	https://data.worldbank.org/indicator
+3. Natural Earth data: Countries - https://www.naturalearthdata.com/downloads/50m-cultural-vectors/ (Admin 0 - Countries), Graticules - https://www.naturalearthdata.com/downloads/110m-physical-vectors/ and Populated Places (simple) https://www.naturalearthdata.com/downloads/10m-cultural-vectors/
+4. World Bank Indicators:	https://data.worldbank.org/indicator
 5. DHS: https://dhsprogram.com/data/ and process/harmonize: https://github.com/mcooper/DHSwealth
+6. LSMS: https://www.worldbank.org/en/programs/lsms
+7. SHDI: https://globaldatalab.org/shdi/shdi/
+8. GHSL: https://ghsl.jrc.ec.europa.eu/
 
 
 ## Run the following scripts in order:
