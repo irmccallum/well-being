@@ -1,0 +1,5 @@
+Instructions to use the maps in this directory:
+
+All maps (tiff format) in the global Robinson Projection.
+
+Each map with a <country name>_wc extension contains the wealth class. 1-poorer, 2-average, 3-richer.
