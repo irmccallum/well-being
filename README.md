@@ -24,7 +24,7 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `cntry_rasterize.R` – rasterize sovereign state polygons needed for zonal statistics
 
-`extract_zonal.R` - creates country level darkness statistics – exports csv file
+`extract_zonal_GHSL.R` - creates country level darkness statistics – exports csv file
 
 `continent_stats.R` – produces table of continent stats on unlit footprints
 
@@ -38,18 +38,18 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `figure2_dhs.R` – country level DHS boxplots, also exports dataset for validation statistics - change continent between Africa, Asia, South and North America to produce respective graphs and tables which are used as input to 'figure2_val.Rmd'
 
-`figure2_val.Rmd` - country level validation of DHS and unlit settlements
-
 `figure3_maps.R` – plot maps of wealth classes for 4 select countries and export all maps as tiff files
+
+`export-maps.R` - export 2km resolution tiff files of 49 DHS countries wealth classes
 
 `figure4a/b/c.R` – plots a,b,c, wealth index, SHDI and income
 
 
 ## SI Scripts
 
-`SI_figure_globe-rural`
-`SI_figure_globe-urban`
-`SI_figure_stats`
-`SI_figure_stats_confidence`
-`SI_figure_val_all`
-`SI_figure_val_by_continent`
+`SI_figure_globe-rural` - Map of % unlit for exclusively rural areas
+`SI_figure_globe-urban` - Map of % unlit for exclusively urban areas
+`SI_figure_stats` - plots of world bank indicators
+`SI_figure_stats_confidence` - 
+`SI_figure_val_all` - 
+`SI_figure_val_by_continent` - 
