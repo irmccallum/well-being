@@ -47,7 +47,9 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 ## SI Scripts
 
-`figureXXX_stats_SI.R` – creates scatterplots of unlit vs World Bank and FAO indicators, exports merged datasets for validation
-
-`figureXXX_stats_confidence_SI.R` - computes an estimate, test statitic, significance test, and confidence interval 
-
+`SI_figure_globe-rural`
+`SI_figure_globe-urban`
+`SI_figure_stats`
+`SI_figure_stats_confidence`
+`SI_figure_val_all`
+`SI_figure_val_by_continent`
