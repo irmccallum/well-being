@@ -53,8 +53,8 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 `SI_figure_stats` - plots of world bank indicators
 
-`SI_figure_stats_confidence` - 
+`SI_figure_stats_confidence` - confidence in bivariate modeling
 
-`SI_figure_val_all` - 
+`SI_figure_val_all` - overall accuracy 
 
-`SI_figure_val_by_continent` - 
+`SI_figure_val_by_continent` - accuracy by continent
