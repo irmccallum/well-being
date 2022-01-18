@@ -48,8 +48,13 @@ Place the following scripts into a single folder, and create subdirectories for 
 ## SI Scripts
 
 `SI_figure_globe-rural` - Map of % unlit for exclusively rural areas
+
 `SI_figure_globe-urban` - Map of % unlit for exclusively urban areas
+
 `SI_figure_stats` - plots of world bank indicators
+
 `SI_figure_stats_confidence` - 
+
 `SI_figure_val_all` - 
+
 `SI_figure_val_by_continent` - 
