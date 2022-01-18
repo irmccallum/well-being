@@ -46,15 +46,16 @@ Place the following scripts into a single folder, and create subdirectories for 
 
 
 ## SI Scripts
+`SI_lsms.R` - Plot of LSMS consumption vs % unlit
 
-`SI_figure_globe-rural` - Map of % unlit for exclusively rural areas
+`SI_figure_globe-rural.R` - Map of % unlit for exclusively rural areas
 
-`SI_figure_globe-urban` - Map of % unlit for exclusively urban areas
+`SI_figure_globe-urban.R` - Map of % unlit for exclusively urban areas
 
-`SI_figure_stats` - plots of world bank indicators
+`SI_figure_stats.R` - plots of world bank indicators
 
-`SI_figure_stats_confidence` - confidence in bivariate modeling
+`SI_figure_stats_confidence.R` - confidence in bivariate modeling
 
-`SI_figure_val_all` - overall accuracy 
+`SI_figure_val_all.R` - overall accuracy 
 
-`SI_figure_val_by_continent` - accuracy by continent
+`SI_figure_val_by_continent.R` - accuracy by continent
