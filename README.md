@@ -1,5 +1,7 @@
 # Well-being: Estimating global economic well-being with unlit settlements
 
+[![DOI](https://zenodo.org/badge/186901894.svg)](https://zenodo.org/badge/latestdoi/186901894)
+
 ## Download Data
 
 1. WSF: https://www.nature.com/articles/s41597-020-00580-5
