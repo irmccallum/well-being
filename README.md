@@ -1,4 +1,4 @@
-# Poverty Mapping
+# Well-being: Estimating global economic well-being with unlit settlements
 
 ## Download Data
 
